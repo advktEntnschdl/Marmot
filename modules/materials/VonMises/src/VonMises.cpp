@@ -48,25 +48,33 @@ namespace Marmot::Materials {
     mMatrix6d  dS_dE( dStress_dStrain.data() );
     const auto dE = Map< const Vector6d >( dStrain.data() );
 
-    // compute elastic stiffness
-    const auto Cel = ContinuumMechanics::Elasticity::Isotropic::stiffnessTensor( E, nu );
+    // compute elastic stiffness and compliance
+    const auto     Cel    = ContinuumMechanics::Elasticity::Isotropic::stiffnessTensor( E, nu );
+    const Matrix6d CelInv = ContinuumMechanics::Elasticity::Isotropic::complianceTensor( E, nu );
 
     // handle zero strain increment
     if ( dE.isZero( 1e-14 ) ) {
-      dS_dE = Cel;
+      dS_dE                               = Cel;
+      state.dElasticEnergyDensity_dStrain = S;
+      state.dDissipation_dStrain.setZero();
       return;
     }
+
+    const double psiOld = 0.5 * S.dot( CelInv * S );
 
     // get current hardening variable
     double& kappa = stateLayout.getAs< double& >( state.stateVars, "kappa" );
 
-    // isotropic hardening law
-    auto fy = [&]( double kappa_ ) {
+    // isotropic hardening law, yield stress floored at zero
+    auto fyUnfloored = [&]( double kappa_ ) {
       return yieldStress + HLin * kappa_ + deltaYieldStress * ( 1. - std::exp( -delta * kappa_ ) );
     };
+    auto fy = [&]( double kappa_ ) { return std::max( fyUnfloored( kappa_ ), 0. ); };
 
     // derivative of fy wrt dKappa
-    auto dfy_ddKappa = [&]( double kappa_ ) { return HLin + deltaYieldStress * delta * std::exp( -delta * kappa_ ); };
+    auto dfy_ddKappa = [&]( double kappa_ ) {
+      return fyUnfloored( kappa_ ) > 0. ? HLin + deltaYieldStress * delta * std::exp( -delta * kappa_ ) : 0.;
+    };
 
     // yield function
     auto f = [&]( double rho_, double kappa_ ) { return rho_ - Constants::sqrt2_3 * fy( kappa_ ); };
@@ -77,7 +85,7 @@ namespace Marmot::Materials {
     using namespace ContinuumMechanics::VoigtNotation;
     const double rhoTrial = std::sqrt( 2. * Invariants::J2( trialStress ) );
 
-    if ( f( rhoTrial, kappa ) >= 0.0 ) {
+    if ( f( rhoTrial, kappa ) >= 0.0 && rhoTrial > 0.0 ) {
       // plastic step
       const double G = E / ( 2. * ( 1. + nu ) );
 
@@ -121,14 +129,22 @@ namespace Marmot::Materials {
               2. * G * ( 1. / ( 1. + dfy_ddKappa( kappa ) / ( 3. * G ) ) - 2. * G * dLambda / rhoTrial ) *
                 ( n * n.transpose() ) -
               4. * G * G * dLambda / rhoTrial * IDevHalfShear;
-      state.elasticEnergyDensity += 0.5 * dE.dot( Cel * dE ) - 2. * G * dLambda * n.dot( dE );
-      state.dissipation += 2. * G * dLambda * n.dot( dE );
+      state.elasticEnergyDensity += 0.5 * S.dot( CelInv * S ) - psiOld;
+      // plastic work sigma : dEpsP = rho dLambda = fy dKappa, with kappa already updated
+      state.dissipation += fy( kappa ) * dKappa;
+
+      // energy tangents; dKappa follows from g = 0 with d rhoTrial / d dE = 2 G n
+      const double dDKappa_dRhoTrial      = 1. / ( Constants::sqrt6 * G + Constants::sqrt2_3 * dfy_ddKappa( kappa ) );
+      state.dElasticEnergyDensity_dStrain = dS_dE.transpose() * ( CelInv * S );
+      state.dDissipation_dStrain = ( fy( kappa ) + dfy_ddKappa( kappa ) * dKappa ) * dDKappa_dRhoTrial * 2. * G * n;
     }
     else {
       // elastic step
       S     = trialStress;
       dS_dE = Cel;
-      state.elasticEnergyDensity += 0.5 * dE.dot( Cel * dE );
+      state.elasticEnergyDensity += 0.5 * S.dot( CelInv * S ) - psiOld;
+      state.dElasticEnergyDensity_dStrain = S;
+      state.dDissipation_dStrain.setZero();
     }
   }
 
@@ -148,24 +164,30 @@ namespace Marmot::Materials {
     mVector6d  S( state.stress.data() );
     const auto dE = dStrain;
 
-    // compute elastic stiffness
-    const auto Cel = ContinuumMechanics::Elasticity::Isotropic::stiffnessTensor( E, nu );
+    // compute elastic stiffness and compliance
+    const auto     Cel    = ContinuumMechanics::Elasticity::Isotropic::stiffnessTensor( E, nu );
+    const Matrix6d CelInv = ContinuumMechanics::Elasticity::Isotropic::complianceTensor( E, nu );
 
     // handle zero strain increment
     if ( dE.isZero( 1e-14 ) ) {
       return;
     }
 
+    const double psiOld = 0.5 * S.dot( CelInv * S );
+
     // get current hardening variable
     double& kappa = stateLayout.getAs< double& >( state.stateVars, "kappa" );
 
-    // isotropic hardening law
-    auto fy = [&]( double kappa_ ) {
+    // isotropic hardening law, yield stress floored at zero
+    auto fyUnfloored = [&]( double kappa_ ) {
       return yieldStress + HLin * kappa_ + deltaYieldStress * ( 1. - std::exp( -delta * kappa_ ) );
     };
+    auto fy = [&]( double kappa_ ) { return std::max( fyUnfloored( kappa_ ), 0. ); };
 
     // derivative of fy wrt dKappa
-    auto dfy_ddKappa = [&]( double kappa_ ) { return HLin + deltaYieldStress * delta * std::exp( -delta * kappa_ ); };
+    auto dfy_ddKappa = [&]( double kappa_ ) {
+      return fyUnfloored( kappa_ ) > 0. ? HLin + deltaYieldStress * delta * std::exp( -delta * kappa_ ) : 0.;
+    };
 
     // yield function
     auto f = [&]( double rho_, double kappa_ ) { return rho_ - Constants::sqrt2_3 * fy( kappa_ ); };
@@ -176,7 +198,7 @@ namespace Marmot::Materials {
     using namespace ContinuumMechanics::VoigtNotation;
     const double rhoTrial = std::sqrt( 2. * Invariants::J2( trialStress ) );
 
-    if ( f( rhoTrial, kappa ) >= 0.0 ) {
+    if ( f( rhoTrial, kappa ) >= 0.0 && rhoTrial > 0.0 ) {
       // plastic step
       const double G = E / ( 2. * ( 1. + nu ) );
 
@@ -218,13 +240,14 @@ namespace Marmot::Materials {
       // update material state
       S     = trialStress - 2. * G * dLambda * n;
       kappa = kappa + dKappa;
-      state.elasticEnergyDensity += 0.5 * dE.dot( Cel * dE ) - 2. * G * dLambda * n.dot( dE );
-      state.dissipation += 2. * G * dLambda * n.dot( dE );
+      state.elasticEnergyDensity += 0.5 * S.dot( CelInv * S ) - psiOld;
+      // plastic work sigma : dEpsP = rho dLambda = fy dKappa, with kappa already updated
+      state.dissipation += fy( kappa ) * dKappa;
     }
     else {
       // elastic step
       S = trialStress;
-      state.elasticEnergyDensity += 0.5 * dE.dot( Cel * dE );
+      state.elasticEnergyDensity += 0.5 * S.dot( CelInv * S ) - psiOld;
     }
   }
 
