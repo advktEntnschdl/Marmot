@@ -238,6 +238,24 @@ namespace Marmot {
       return Pk;
     }
 
+    VectorXd BoundaryElement::computeVectorialLoadVectorForAxisymmetricElements( const Eigen::VectorXd& direction )
+    {
+      /* compute the load vector for a constant distributed load (e.g. traction) in arbitrary direction for
+       * axisymmetric elements (circumferential integration included)
+       * Attention: result =  boundary-element-sized!
+       *  -> use expandBoundaryToParentVector to obtain the parent-element-sized load vector
+       * */
+
+      VectorXd Pk = VectorXd::Zero( coordinates.size() );
+
+      for ( const auto& qp : quadraturePoints ) {
+        Eigen::VectorXd coordAtGauss = NB( qp.N, nDim ) * coordinates;
+        Pk += qp.JxW * 2. * coordAtGauss( 0 ) * Constants::Pi * direction.transpose() * NB( qp.N, nDim );
+      }
+
+      return Pk;
+    }
+
     MatrixXd BoundaryElement::computeDVectorialLoadVector_dCoordinates( const Eigen::VectorXd& direction )
     {
       throw std::invalid_argument( MakeString() << __PRETTY_FUNCTION__ << "Not yet implemented" );
