@@ -95,6 +95,7 @@ namespace Marmot::Materials {
       dS_dE                               = integrityOld * Cel;
       state.dElasticEnergyDensity_dStrain = integrityOld * effStressOld;
       state.dDissipation_dStrain.setZero();
+      acYield = 0;
       return;
     }
 
