@@ -1,0 +1,473 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.18.0" xml:lang="en-US">
+  <compound refid="class_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element" kind="class"><name>Marmot::Discretizations::Elements::BoundaryElement</name>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1a54b638b229bf64d6ddbd19c643ab24ec" kind="variable"><name>nDim</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1a4a3dadd9ee59df86786e0cfd82d808ba" kind="variable"><name>boundaryShape</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1a9a146ab02b4645585327b2dcec9dac61" kind="variable"><name>nNodes</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1a4383f15e9298c1dd3510b814ba5da71c" kind="variable"><name>nParentCoordinates</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1a45fc5ebc294867c979028abac259e2f9" kind="variable"><name>quadraturePoints</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1a48f7da83b1533266e32e9c8045da92d8" kind="variable"><name>mapBoundaryToParentScalar</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1ac6f58b0d66db5af8eba4ae1d28816ad5" kind="variable"><name>mapBoundaryToParentVectorial</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1a5a9d3964011899492bb19bbfdec6e49a" kind="variable"><name>coordinates</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1a769980c00677bf956e02981c3a009a40" kind="function"><name>BoundaryElement</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1a7bc31a8475392dad18416bf8625f2472" kind="function"><name>computeScalarLoadVector</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1a111d60ec628cfcb224571cbf34e7bcb2" kind="function"><name>computeDScalarLoadVector_dCoordinates</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1abc027b63598e4b76987d1350b7918701" kind="function"><name>computeSurfaceNormalVectorialLoadVector</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1a3e8715c47360084aa06b500e7a7846b5" kind="function"><name>computeSurfaceNormalVectorialLoadVectorForAxisymmetricElements</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1a665683beb9fd868f7b8030456f4f5cf0" kind="function"><name>computeDSurfaceNormalVectorialLoadVector_dCoordinates</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1a17115bb1e4df926e39de18ebff1e30df" kind="function"><name>computeVectorialLoadVector</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1a3780d3bdf1dc0f461ce52dfe90db8fd2" kind="function"><name>computeDVectorialLoadVector_dCoordinates</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1a91b5d25f1b1ac20818fa898bd9a15138" kind="function"><name>condenseParentToBoundaryScalar</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1a461947cdd1a3fc88e79b9f04c3066672" kind="function"><name>assembleIntoParentScalar</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1a92d3a6998261cddd9c3845ee8d947b3e" kind="function"><name>assembleIntoParentStiffnessScalar</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1a95dc163fbe72fda4cecae986016e5ef8" kind="function"><name>condenseParentToBoundaryVectorial</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1ab2b9865d4f8a573aa745e4132e3a6c30" kind="function"><name>assembleIntoParentVectorial</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1a4a7c9f2b6b66bc105fd24b164179a9cf" kind="function"><name>assembleIntoParentStiffnessVectorial</name></member>
+  </compound>
+  <compound refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1_1_boundary_element_quadrature_point" kind="struct"><name>Marmot::Discretizations::Elements::BoundaryElement::BoundaryElementQuadraturePoint</name>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1_1_boundary_element_quadrature_point_1af069b69ed91f8ca0b177e2ff7170e93e" kind="variable"><name>weight</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1_1_boundary_element_quadrature_point_1ac25f32cc47217118f2d12826ddf2824e" kind="variable"><name>JxW</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1_1_boundary_element_quadrature_point_1a35c01f3c6ad1519cae9b4dae06b3739a" kind="variable"><name>xi</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1_1_boundary_element_quadrature_point_1a9630414fc4d5ee1c4ca56a496ee3d902" kind="variable"><name>N</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1_1_boundary_element_quadrature_point_1a1c78964633e5c08cca084bd03a9fa2c6" kind="variable"><name>dNdXi</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1_1_boundary_element_quadrature_point_1ae91a2de90bf551d98a77e73394ded271" kind="variable"><name>dx_dXi</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_boundary_element_1_1_boundary_element_quadrature_point_1a00032b2c687cc7c467622bff08374115" kind="variable"><name>areaVector</name></member>
+  </compound>
+  <compound refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_bulk_viscosity_1_1_coefficients" kind="struct"><name>Marmot::Discretizations::Elements::BulkViscosity::Coefficients</name>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_bulk_viscosity_1_1_coefficients_1a25e68ac6feea1dac6121546f15b01c4c" kind="variable"><name>linear</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_bulk_viscosity_1_1_coefficients_1a543ae19e09c97dabed65710ae3e7126b" kind="variable"><name>quadratic</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_bulk_viscosity_1_1_coefficients_1a3135450ba21a3655d1204ba0f5012a06" kind="variable"><name>degradation</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_bulk_viscosity_1_1_coefficients_1aad996ac59dff1ccafe95baa8fa98bae7" kind="function"><name>areActive</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_bulk_viscosity_1_1_coefficients_1a3f5eae25fc6d3831847c4fe3e2526fe5" kind="function"><name>isDegraded</name></member>
+  </compound>
+  <compound refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element" kind="class"><name>Marmot::Discretizations::Elements::Element</name>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a960580b197315c588cd749c27d577451" kind="enum"><name>StateTypes</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a960580b197315c588cd749c27d577451a262f194a5a0458cc3c48ab3c8a09b6df" kind="enumvalue"><name>Sigma11</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a960580b197315c588cd749c27d577451afa813f7040dbec49f1dd0cf6ffb8f7e7" kind="enumvalue"><name>Sigma22</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a960580b197315c588cd749c27d577451a72f9d267d34005c31f3649dd2d300753" kind="enumvalue"><name>Sigma33</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a960580b197315c588cd749c27d577451a36241e2982fcbeba6fb988034d59d480" kind="enumvalue"><name>HydrostaticStress</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a960580b197315c588cd749c27d577451a82ae57cfe5c3741b1fcdff7a0385b636" kind="enumvalue"><name>GeostaticStress</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a960580b197315c588cd749c27d577451a1f13cf6e759c77b985bedfec4ab4aef6" kind="enumvalue"><name>MarmotMaterialStateVars</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a960580b197315c588cd749c27d577451a1096b2bbdc3df830e119185086d3f397" kind="enumvalue"><name>MarmotMaterialInitialization</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a960580b197315c588cd749c27d577451a9da2d46fa0fc7aab835895e604fa6125" kind="enumvalue"><name>HasEigenDeformation</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a7fb37496e1f3ed20eb957e3368ed75fa" kind="enum"><name>DistributedLoadTypes</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a7fb37496e1f3ed20eb957e3368ed75faa8a14b7949f9b56bd11c790176e657204" kind="enumvalue"><name>Pressure</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a7fb37496e1f3ed20eb957e3368ed75faa1bec408a27828ff9989811d49e2a39c3" kind="enumvalue"><name>SurfaceTorsion</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a7fb37496e1f3ed20eb957e3368ed75faa2bf845491316cc456238850e39fc831b" kind="enumvalue"><name>SurfaceTraction</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a2779ed04727b13059805194acf951c7e" kind="function"><name>~Element</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a07a2925b44c1cf5d164d712e9f49b274" kind="function"><name>getNumberOfRequiredStateVars</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1ab5119c9d217cc4567c5e5fc0dd9d8b78" kind="function"><name>getNodeFields</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1aa625b1417209fb603b5324300290d8b9" kind="function"><name>getDofIndicesPermutationPattern</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a6e2b81bd1ec923e99b8984d0888aa2c9" kind="function"><name>getNNodes</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1ab8d2de735ebbeafbbe186565d8df3b7f" kind="function"><name>getNSpatialDimensions</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a049378a4baa4433392a7576d7ab4c7f6" kind="function"><name>getNDofPerElement</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a3b8fc552d45300d48e4c0df93f955574" kind="function"><name>getElementShape</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a8c428c7e01d08a83268efa6b294460dd" kind="function"><name>assignStateVars</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a19f4a8715f3b76d5024fa416876f038d" kind="function"><name>assignProperty</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a56960c8718fddf051f1ce0f607bd857a" kind="function"><name>assignProperty</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1aadaf2d2054cf071fb278552bbf62f42f" kind="function"><name>assignProperty</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a5d62201e058ad6df8f994c2a58a15e83" kind="function"><name>getPropertyNames</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a58691593fbdc3f791d4d45472f454928" kind="function"><name>assignNodeCoordinates</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a10119ad937d8778cb58793dd1a1581f0" kind="function"><name>initializeYourself</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a7f67740e1fd8fcb1b345981f2d2e25e2" kind="function"><name>setInitialConditions</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1ab6a8d0c39c75ed93c360108fede435ec" kind="function"><name>computeKernels</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1ac92306ee9f7568de4bc7f57456883414" kind="function"><name>computeKernelsExplicit</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a39ed61f6618647ea241acbec2006ecc6" kind="function"><name>computeDistributedLoad</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a5663007eb8c360177133b7134475be03" kind="function"><name>computeBodyForce</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a4d7af6c8b0d2adbb812f785d9ba2ab85" kind="function"><name>computeLumpedInertia</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1ae84ee04baeb50229586f722aa504a7b7" kind="function"><name>computeConsistentInertia</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1ac40288c7385c42d103255fc8240de127" kind="function"><name>computeCriticalTimeStepForExplicitDynamics</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a61b2edabfd86134bf4b713aed93a181d" kind="function"><name>computeInternalEnergy</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1aa0d140252f5a10212ce7031cbcbf2eea" kind="function"><name>getStateView</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a3005393ec0463bac458b2e8df1cf784a" kind="function"><name>getCoordinatesAtCenter</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a6ed9e23e38098ed9ed5b8dd34ea1b62b" kind="function"><name>getCoordinatesAtQuadraturePoints</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1adf8e3df3922a0bc589b07379c2bc4383" kind="function"><name>getNumberOfQuadraturePoints</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_1a80dc7db8ea59796b187b752075019a0a" kind="function"><name>computeLumpedDamping</name></member>
+  </compound>
+  <compound refid="class_marmot_1_1_registry_1_1_element_factory" kind="class"><name>Marmot::Registry::ElementFactory</name>
+    <member refid="class_marmot_1_1_registry_1_1_element_factory_1af0757f08b06762cbd64e7a371221ca6b" kind="typedef"><name>elementFactoryFunction</name></member>
+    <member refid="class_marmot_1_1_registry_1_1_element_factory_1a44b0aa7e56e85cb44e8d381e0cf92180" kind="typedef"><name>ElementFactoryMap</name></member>
+    <member refid="class_marmot_1_1_registry_1_1_element_factory_1a8c96062e7599166a88bfc744c0e2a244" kind="function"><name>ElementFactory</name></member>
+    <member refid="class_marmot_1_1_registry_1_1_element_factory_1af6face33f7b4ebeab8abc3f21f09f349" kind="function"><name>createElement</name></member>
+    <member refid="class_marmot_1_1_registry_1_1_element_factory_1a1476af9890252b5766d0b4dff97d2073" kind="function"><name>registerElement</name></member>
+    <member refid="class_marmot_1_1_registry_1_1_element_factory_1a01167e41bf91695ffeb4adc1425c4639" kind="function"><name>elementFactoryFunctionByName</name></member>
+  </compound>
+  <compound refid="class_marmot_1_1_discretizations_1_1_element_properties" kind="struct"><name>Marmot::Discretizations::ElementProperties</name>
+    <member refid="class_marmot_1_1_discretizations_1_1_element_properties_1a0944e0f7d66b84e1ab13c367aba83da8" kind="variable"><name>elementProperties</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_element_properties_1a6e29d7516a32c99a8869d90cab57ce53" kind="variable"><name>nElementProperties</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_element_properties_1a12c9efb5e9215dda6e7667c4e0b12393" kind="function"><name>ElementProperties</name></member>
+  </compound>
+  <compound refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper" kind="class"><name>Marmot::Discretizations::Elements::ElementSpatialWrapper</name>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1ae0a06e9e9c06972846cbc9c98aa9b2c9" kind="variable"><name>nDim</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1ac91e8d472637d2f3eeef8c2f8f6b1312" kind="variable"><name>nDimChild</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a1abca1a6aad9d7bfad0dfa2cbd060bbb" kind="variable"><name>nNodes</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a5f7c4709883d5da117a6d76911677de2" kind="variable"><name>nRhsChild</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a51d170fb0c2d2fd47e1a05721e5f5c16" kind="variable"><name>rhsIndicesToBeProjected</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a32cb7f5320f3a87040b12770b8ba3189" kind="variable"><name>projectedSize</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a462841a901e30455398c51dc85a647ea" kind="variable"><name>unprojectedSize</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a17d2f81af94c78f99b02e3d313d6f646" kind="variable"><name>childElement</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a56bc368a9c5c35023804ead405550b77" kind="variable"><name>T</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a20c900e11b871086b3124e07c6a6a216" kind="variable"><name>P</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a04166d94a7c8da83d635640776024c4a" kind="variable"><name>projectedCoordinates</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a75b986c4867eb4088ca25f9ff203a05d" kind="variable"><name>referenceCoordinates</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a0424f1b33c60602e23a925451c3fb24a" kind="function"><name>ElementSpatialWrapper</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a840d63fd8e949506b44b3f473ab868ce" kind="function"><name>getNumberOfRequiredStateVars</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1ae8364a7424e68c534db6782c0da071c0" kind="function"><name>getNodeFields</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1af877a0c80000c8b88f0a554e28ff02c4" kind="function"><name>getDofIndicesPermutationPattern</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1af27cde38990a5c253b726a3ca7287050" kind="function"><name>getNNodes</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a624a36d5e199af0d877e760f4c25653e" kind="function"><name>getNSpatialDimensions</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a1bc2b6fccc2fbaedd909ea96fc65e204" kind="function"><name>getNDofPerElement</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1acd670b354064106369630c7dbe0aa522" kind="function"><name>getElementShape</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a1be5f1c50ba6276b17a7676d7a4d4a9b" kind="function"><name>assignStateVars</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a591e56f952908b433ebb4120a47f8883" kind="function"><name>assignProperty</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a5f731795d696a1ff22acaf62527d6895" kind="function"><name>assignProperty</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1afb2590a6fc93378c78a8c7a7c720d8fd" kind="function"><name>assignProperty</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a243b7919d7e23c3c27efb43fdd63abc1" kind="function"><name>getPropertyNames</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a16e1959111fc52953d6835a5c6a3b334" kind="function"><name>assignNodeCoordinates</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a0e0d3b7415db93b509465e7a550f2feb" kind="function"><name>initializeYourself</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1affb32124a4f2caab7f2b086197d30242" kind="function"><name>computeKernels</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a4126fe758e00375bf9ddb2a12cd32a7c" kind="function"><name>setInitialConditions</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a094fa20776d6c155d75fb7c34e7bbe1d" kind="function"><name>computeDistributedLoad</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1ae1dc2869dff84e93a74d935961646513" kind="function"><name>computeBodyForce</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1aa0ec6f747dd5b7d964e158d1974910cd" kind="function"><name>getStateView</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a8dd3b488be403d11e18743072917c394" kind="function"><name>getCoordinatesAtCenter</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1a7f817819605f4de472872b14dd2b73bb" kind="function"><name>getCoordinatesAtQuadraturePoints</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element_spatial_wrapper_1af5b0ec987d1b18060c17bd0ef5d4633d" kind="function"><name>getNumberOfQuadraturePoints</name></member>
+  </compound>
+  <compound refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element" kind="class"><name>Marmot::Discretizations::Elements::GeometryElement</name>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1ae8e5c54a1b64c814bd2be9a09e9222c8" kind="typedef"><name>XiSized</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1af6db4302d18e995c1d332e65a634d0eb" kind="typedef"><name>CoordinateVector</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1a026b4fe63b2bc12dbaea70e5723ac30f" kind="typedef"><name>JacobianSized</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1aef748bc3680ac788da04203342f2d302" kind="typedef"><name>NSized</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1a42a5b086a83890d4b684f48e641a67f5" kind="typedef"><name>NBSized</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1a604fab2ec9875b70f276c38da5484a83" kind="typedef"><name>dNdXiSized</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1a113fb932e7b1451b34aa699e10b73105" kind="typedef"><name>BSized</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1a3033c18e1c32696112a04a1fb7f8494f" kind="typedef"><name>BSizedAxisymmetric</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1a93ce1a92bd93b1db390364cbe6a720fa" kind="variable"><name>voigtSize</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1a993b48598847c5447de05c680102574d" kind="variable"><name>shape</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1a95d9f43eb12fabeb058de3e13a3fb077" kind="variable"><name>referenceDomain</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1af522b72ea69ef8334fe6594fe0f07d12" kind="variable"><name>interpolationOrder</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1adba7c9e6cc02bb1127417c1f5d6ac1af" kind="variable"><name>coordinates</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1acd62cb4576b16aa8a77951e5c64cd478" kind="function"><name>GeometryElement</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1a1428c3008b70890ee1e4534201ecbff1" kind="function"><name>getElementShape</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1abf439f8610a089a827f1d9ef4e529140" kind="function"><name>assignNodeCoordinates</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1a7a3dd9712d65c485aa03649aea38f8d3" kind="function"><name>N</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1a6d6e2e5669381d0b0a807ce48c322e0f" kind="function"><name>dNdXi</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1a779d72c82bc0baad30b834348cc3a4cd" kind="function"><name>B</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1adefbd744da0cd095be604229ff09754c" kind="function"><name>B_axisymmetric</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1a5bb00b0fb348dd43e6a4f7d5e7605c62" kind="function"><name>B_bar</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1a4c26a273faf1707820e9b9279a5adc0e" kind="function"><name>BGreen</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1a17d36ed83c3b98970add7f43541901ae" kind="function"><name>NB</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1a3f4f327b53b87f4f33e6a2335c4e9245" kind="function"><name>Jacobian</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1a584da728cca924b5907555a8751c5ce3" kind="function"><name>dNdX</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1aa36b52874889427e3a51e6a152bf49af" kind="function"><name>F</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1acfc5da245990bb15ac1a366f68728965" kind="function"><name>center</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1ad8d7fdbe6e2323469363110e80b9727b" kind="function"><name>characteristicLengthForCriticalTimeStepAt</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1a366b8fbfd584e375f036904751a919ab" kind="function"><name>referenceCentroid</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_element_1a9997aa16d56191f734a9b35a99c20378" kind="function"><name>volumeEquivalentLength</name></member>
+  </compound>
+  <compound refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element" kind="class"><name>Marmot::Discretizations::Elements::GeometryInterfaceElement</name>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1a895de9964df00e5cb2ecac8fc3063de9" kind="typedef"><name>XiSized</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1a2adbe2acab40717580c5af69a94a34e7" kind="typedef"><name>NSized</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1a3b1acf8d2d01860fa7a97022a229b6d3" kind="typedef"><name>dNdXiSized</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1ae3de3169f164fcd7844b09040ce70a3b" kind="typedef"><name>CoordinateVector</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1a66d54a18a1e22be4bf444f7a69ba02c2" kind="typedef"><name>SideCoordinateVector</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1a6b233d32071d0e51876debddca56cfe2" kind="typedef"><name>SurfaceJacobianSized</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1abce502afdf3f7e7a14bca5b4b201a52b" kind="typedef"><name>MetricSized</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1aa3299e62125a65f6a75b6245c8ef025e" kind="typedef"><name>GradSized</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1a98fe5114e06939e003b3b2e4f6c5db6a" kind="typedef"><name>VectorDim</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1a85e7670b0133b71b2b0d587cfbfaf01d" kind="typedef"><name>TensorDim</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1a86da9c6ac41653e02a190d1e0e244561" kind="typedef"><name>NMatrixSized</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1aa549496643fc1c613e2c5d22bb341232" kind="typedef"><name>NJumpMatrixSized</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1a2fecad5df2a4099e70ceb731c0c78486" kind="typedef"><name>BSurfaceSized</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1ab070acd156f0a8523538084786809eb3" kind="typedef"><name>BAvgSurfaceSized</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1a0ff417909f1b2cf770d873ed7b49bf99" kind="variable"><name>nXi</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1ae66b00fad693f7f5554c1a267ffcbc3c" kind="variable"><name>nInterfaceNodes</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1a2709b50c3a74d04d98e2adf5cfde1481" kind="variable"><name>nDofPerNodeU</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1a9ef5015d3544be6d754f70e915b3e5cd" kind="variable"><name>nDofPerSide</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1a37305b927e718d88332a85ab2a53c41c" kind="variable"><name>nDofElement</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1ab8388acef339fad93485fed9b14751db" kind="variable"><name>coordinates</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1ae2be5ea275c7a99fb811b8c5648120e0" kind="variable"><name>shape</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1a001ff313dfb9cac2103edfea1b575060" kind="function"><name>GeometryInterfaceElement</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1af75c3f9de47ec3cd5c441d7ea05484ec" kind="function"><name>getElementShape</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1abb75c010a785b9e722d7a389f1b27618" kind="function"><name>assignNodeCoordinates</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1a19de2afefdb445e6ec47dbdce38da904" kind="function"><name>N</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1ae56978c2a942fac3f3ffb954b502a81c" kind="function"><name>dNdXi</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1a2c890728298657d9db5565dbc4ac5007" kind="function"><name>getSideCoordinates</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1ace2ecda682c5c88bfac6e631384faab8" kind="function"><name>surfaceJacobian</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1abde9fa57dd618f82ae2a6f1e9753fe63" kind="function"><name>metric</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1a9a75de97c97544fe948c58f48d7eb836" kind="function"><name>sqrtDetMetric</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1ac6f073f98d05bf6a9ace96b34cf65261" kind="function"><name>surfaceGradient</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1adc9771016da1b02ca82d5a84683fdc64" kind="function"><name>normal</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1acb84d4a721c0e94516374e773e0784de" kind="function"><name>normalProjector</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1a3914633a80ae4d41206cee0167e97888" kind="function"><name>tangentProjector</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1aa32a31c968c4e90b1501dd86abd970d6" kind="function"><name>NMatrix</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1a0e91dc1c712c51a7aa910245cfb86b88" kind="function"><name>NJumpMatrix</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1a100f4329930fbfa8781a9c074aa66e4b" kind="function"><name>BSurfaceMatrix</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1a345afad207a8f546d2327161adc724f5" kind="function"><name>BAverageSurfaceMatrix</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1a0e53c1b0352134163374b409092328ad" kind="function"><name>evaluateAt</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1ac86940cdf774ccd2f72381f9881bdc24" kind="function"><name>getInterfaceElementShape</name></member>
+  </compound>
+  <compound refid="class_marmot_1_1_discretizations_1_1_material_section" kind="struct"><name>Marmot::Discretizations::MaterialSection</name>
+    <member refid="class_marmot_1_1_discretizations_1_1_material_section_1ad76fce105997b5f27e784e5b9df435c4" kind="variable"><name>materialName</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_material_section_1a7015aa4ccd63061a1c1018bc5888880a" kind="variable"><name>materialProperties</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_material_section_1a98a57b1ac61905943d2dfb136b46b4ba" kind="variable"><name>nMaterialProperties</name></member>
+    <member refid="class_marmot_1_1_discretizations_1_1_material_section_1ae939e35adb00d410cf7d49a3b2a5e48e" kind="function"><name>MaterialSection</name></member>
+  </compound>
+  <compound refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1_1_quadrature_geometry" kind="struct"><name>Marmot::Discretizations::Elements::GeometryInterfaceElement::QuadratureGeometry</name>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1_1_quadrature_geometry_1a769747b2c3348f4daefd9935993c252f" kind="variable"><name>N</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1_1_quadrature_geometry_1af08bbd77f886058495c65e5dab3fc89d" kind="variable"><name>dNdXi</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1_1_quadrature_geometry_1a39f73eb989f0103be82ac99282a111d1" kind="variable"><name>J</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1_1_quadrature_geometry_1a8327f81766a4761731a73bdc1f6c9173" kind="variable"><name>G</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1_1_quadrature_geometry_1a6e5f17777a72609b12bfa5ea6245df0f" kind="variable"><name>sqrtDetG</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1_1_quadrature_geometry_1aa6f01f35629c3a64eebf5f4180cd411e" kind="variable"><name>gradN</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1_1_quadrature_geometry_1ab4603840f3cb25210e00f975075e9610" kind="variable"><name>n</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1_1_quadrature_geometry_1aec3a9b292d06acb238f2db15e9a7f338" kind="variable"><name>normalProjection</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1_1_quadrature_geometry_1aad7b6bb10e57193cf109966e20711de7" kind="variable"><name>tangentProjection</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1_1_quadrature_geometry_1a403b7dc5b6a27a6460bea7cf5bbedfd3" kind="variable"><name>NmatSide</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1_1_quadrature_geometry_1ad71298155152d96b679365f324950bf0" kind="variable"><name>NmatJump</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1_1_quadrature_geometry_1a6cb3515f9640dc54717d716ca051a857" kind="variable"><name>BmatSide</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_geometry_interface_element_1_1_quadrature_geometry_1adab2a813c83fa268e73e07d0e13f9f05" kind="variable"><name>BmatAverage</name></member>
+  </compound>
+  <compound refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_quadrature_point_info" kind="struct"><name>Marmot::Discretizations::Elements::Quadrature::QuadraturePointInfo</name>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_quadrature_point_info_1ae709f3a67d6a6f355ddfb299f571ed3e" kind="variable"><name>xi</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_quadrature_point_info_1ab451d32e0131afbf5048fa3ecc9a9742" kind="variable"><name>weight</name></member>
+  </compound>
+  <compound refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_quadrature_rule" kind="struct"><name>Marmot::Discretizations::Elements::Quadrature::QuadratureRule</name>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_quadrature_rule_1ab913c089d817c6f1d8c3755863350af1" kind="variable"><name>family</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_quadrature_rule_1a8c19c397c9f5766c7521cf79f2c4f857" kind="variable"><name>degreeOfExactness</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_quadrature_rule_1a87867d667ddca66688ae4733739e2a43" kind="function"><name>operator==</name></member>
+  </compound>
+  <compound refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_quadrature_rule_data" kind="struct"><name>Marmot::Discretizations::Elements::Quadrature::QuadratureRuleData</name>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_quadrature_rule_data_1a046290f2c0de942242937fa31cb53880" kind="variable"><name>domain</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_quadrature_rule_data_1a2e3d9b8870f89039be1206ac833b0917" kind="variable"><name>family</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_quadrature_rule_data_1abb2bedb8ac8ef95828707d065acb7362" kind="variable"><name>degreeOfExactness</name></member>
+    <member refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_quadrature_rule_data_1a2e25857975ce0df8290f54bfd3f0c2e4" kind="variable"><name>points</name></member>
+  </compound>
+  <compound refid="namespace_marmot" kind="namespace"><name>Marmot</name>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations" kind="namespace"><name>Marmot::Discretizations</name>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations_1_1_elements" kind="namespace"><name>Marmot::Discretizations::Elements</name>
+    <member refid="_marmot_finite_element_8h_1afc3a3457c25a0bbd01d1a5d2d07fb78d" kind="enum"><name>ElementShapes</name></member>
+    <member refid="_marmot_finite_element_8h_1afc3a3457c25a0bbd01d1a5d2d07fb78da1f6416415f77d673ba51042ec1baf81a" kind="enumvalue"><name>Bar2</name></member>
+    <member refid="_marmot_finite_element_8h_1afc3a3457c25a0bbd01d1a5d2d07fb78da33e7ea18677b5dfda2d4df095bdeb617" kind="enumvalue"><name>Bar3</name></member>
+    <member refid="_marmot_finite_element_8h_1afc3a3457c25a0bbd01d1a5d2d07fb78dac07a88b2ffcd56dc4e061e8fca43bb38" kind="enumvalue"><name>Tri3</name></member>
+    <member refid="_marmot_finite_element_8h_1afc3a3457c25a0bbd01d1a5d2d07fb78da70c9ce7e668ebd139d178d3d4e86fbba" kind="enumvalue"><name>Quad4</name></member>
+    <member refid="_marmot_finite_element_8h_1afc3a3457c25a0bbd01d1a5d2d07fb78daa097d47e5885d89579cc3a648260cfb9" kind="enumvalue"><name>Quad8</name></member>
+    <member refid="_marmot_finite_element_8h_1afc3a3457c25a0bbd01d1a5d2d07fb78da1b215d42f939c3ed62c62b3018360350" kind="enumvalue"><name>Quad9</name></member>
+    <member refid="_marmot_finite_element_8h_1afc3a3457c25a0bbd01d1a5d2d07fb78da04f154c9b59bc515295825a3e2348383" kind="enumvalue"><name>Quad16</name></member>
+    <member refid="_marmot_finite_element_8h_1afc3a3457c25a0bbd01d1a5d2d07fb78da3a05254289f2500f35ea33a066221a12" kind="enumvalue"><name>Tetra4</name></member>
+    <member refid="_marmot_finite_element_8h_1afc3a3457c25a0bbd01d1a5d2d07fb78da196f8ecc8267fb49d871c624be581684" kind="enumvalue"><name>Tetra10</name></member>
+    <member refid="_marmot_finite_element_8h_1afc3a3457c25a0bbd01d1a5d2d07fb78da568cc503e8e7c8d675b7a321cfa3009f" kind="enumvalue"><name>Hexa8</name></member>
+    <member refid="_marmot_finite_element_8h_1afc3a3457c25a0bbd01d1a5d2d07fb78da411cdcc5ae137d10f0823f5aab2a24cd" kind="enumvalue"><name>Hexa20</name></member>
+    <member refid="_marmot_finite_element_8h_1afc3a3457c25a0bbd01d1a5d2d07fb78dacdaecf236724a72a5815be6fb1e0c82b" kind="enumvalue"><name>Hexa27</name></member>
+    <member refid="_marmot_finite_element_8h_1afc3a3457c25a0bbd01d1a5d2d07fb78da57fb180eaa3ccc779fad9635182b17b2" kind="enumvalue"><name>Hexa64</name></member>
+    <member refid="_marmot_finite_element_8h_1a86a49e202b86c13d6f37c65f1d870037" kind="enum"><name>ReferenceDomain</name></member>
+    <member refid="_marmot_finite_element_8h_1a86a49e202b86c13d6f37c65f1d870037a4803e6b9e63dabf04de980788d6a13c4" kind="enumvalue"><name>Line</name></member>
+    <member refid="_marmot_finite_element_8h_1a86a49e202b86c13d6f37c65f1d870037a5e5500cb2b82eb72d550de644bd1b64b" kind="enumvalue"><name>Triangle</name></member>
+    <member refid="_marmot_finite_element_8h_1a86a49e202b86c13d6f37c65f1d870037ab1aa854f21a681be6412a6df6340ab00" kind="enumvalue"><name>Quadrilateral</name></member>
+    <member refid="_marmot_finite_element_8h_1a86a49e202b86c13d6f37c65f1d870037ae029cf63d8d01a489974f9289b50dc80" kind="enumvalue"><name>Tetrahedron</name></member>
+    <member refid="_marmot_finite_element_8h_1a86a49e202b86c13d6f37c65f1d870037a9f9ee7eff41b83c79fb8cce4168c5af6" kind="enumvalue"><name>Hexahedron</name></member>
+    <member refid="_marmot_dof_layout_tools_8h_1a98c08d5215757d34e1f1512070231093" kind="function"><name>makeNodeFieldLayout</name></member>
+    <member refid="_marmot_dof_layout_tools_8h_1a804b8a9246613f1b61b2d79200c0f01d" kind="function"><name>makeBlockedLayoutPermutationPattern</name></member>
+    <member refid="_marmot_finite_element_8h_1ada5e3207066d4cafb1c0deeeb7eadaa7" kind="function"><name>getElementShapeByMetric</name></member>
+    <member refid="_marmot_finite_element_8h_1af4723cb90e4a3659f8a8fe0e3e8c546a" kind="function"><name>getReferenceDomain</name></member>
+    <member refid="_marmot_finite_element_8h_1afc5444ef06b176eeeaef534ac63947a6" kind="function"><name>getNumberOfCornerNodes</name></member>
+    <member refid="_marmot_finite_element_8h_1a9f90e571c4a9aa9ae7998cd96cfe33ec" kind="function"><name>getInterpolationOrder</name></member>
+    <member refid="_marmot_finite_element_8h_1a0cbecf044f3edd4f51ac0d1356b44c92" kind="function"><name>isSimplex</name></member>
+    <member refid="_marmot_finite_element_8h_1a84f7a732379ec65262c588d5011c3d81" kind="function"><name>getReferenceMeasure</name></member>
+    <member refid="_marmot_finite_element_8h_1a5d182befaee43f18a1b9b509be18ccb6" kind="function"><name>getReferenceCentroidCoordinate</name></member>
+    <member refid="_marmot_finite_element_8h_1acb650496b98651c0a532e189c54f1acb" kind="function"><name>NB</name></member>
+    <member refid="_marmot_finite_element_8h_1aadc18ce31dc8208f8a8c009a5efb4680" kind="function"><name>NB</name></member>
+    <member refid="_marmot_finite_element_8h_1af2edfffc9fb728f9cb28cdec52490e6a" kind="function"><name>Jacobian</name></member>
+    <member refid="_marmot_finite_element_8h_1a963071c3bb1582ad43dcd54c2152d66c" kind="function"><name>Jacobian</name></member>
+    <member refid="_marmot_finite_element_8h_1aa3cdab971a5ca6cf606eb53ecbce0e47" kind="function"><name>expandNodeIndicesToCoordinateIndices</name></member>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_bulk_viscosity" kind="namespace"><name>Marmot::Discretizations::Elements::BulkViscosity</name>
+    <member refid="_marmot_bulk_viscosity_8h_1aa32b4d140c18cc5c28c2338868ca9b09" kind="function"><name>degradationFactor</name></member>
+    <member refid="_marmot_bulk_viscosity_8h_1a676113ff7f01e2919452ffc1ff12ac15" kind="function"><name>viscousStress</name></member>
+    <member refid="_marmot_bulk_viscosity_8h_1a64a8dd95220e770ad7008e40a80edec3" kind="function"><name>viscousStressFromIncrement</name></member>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_consistent_mass" kind="namespace"><name>Marmot::Discretizations::Elements::ConsistentMass</name>
+    <member refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_consistent_mass_1a7f625f017805e50a3f5fd8134d19232d" kind="function"><name>integrationRule</name></member>
+    <member refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_consistent_mass_1a9d0e05a22c0a0c31e2344ba29d28cc07" kind="function"><name>nearestQuadraturePoint</name></member>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_e_a_s" kind="namespace"><name>Marmot::Discretizations::Elements::EAS</name>
+    <member refid="_marmot_enhanced_assumed_strain_8h_1aeb8c09af8fe44b119e8b83d3f0769899" kind="enum"><name>EASType</name></member>
+    <member refid="_marmot_enhanced_assumed_strain_8h_1aeb8c09af8fe44b119e8b83d3f0769899a5c93f8759b6b03fe95f21fa9533e7b68" kind="enumvalue"><name>DeBorstEAS2</name></member>
+    <member refid="_marmot_enhanced_assumed_strain_8h_1aeb8c09af8fe44b119e8b83d3f0769899a527445aebcf0ff3a37ad7d0813e218a2" kind="enumvalue"><name>DeBorstEAS2_P2</name></member>
+    <member refid="_marmot_enhanced_assumed_strain_8h_1aeb8c09af8fe44b119e8b83d3f0769899a61a7b2157f2c16aa2c4ef6619a58ac2b" kind="enumvalue"><name>EAS3</name></member>
+    <member refid="_marmot_enhanced_assumed_strain_8h_1aeb8c09af8fe44b119e8b83d3f0769899ad7da6f409e03c38e4a8bf8873ed2b3e4" kind="enumvalue"><name>DeBorstEAS6b</name></member>
+    <member refid="_marmot_enhanced_assumed_strain_8h_1aeb8c09af8fe44b119e8b83d3f0769899a7730e8d73fa1ed43f91e8a6153c97f18" kind="enumvalue"><name>DeBorstEAS9</name></member>
+    <member refid="_marmot_enhanced_assumed_strain_8h_1aeb8c09af8fe44b119e8b83d3f0769899a3c813af5b1296341685acf001434c246" kind="enumvalue"><name>SimoRifaiEAS5</name></member>
+    <member refid="_marmot_enhanced_assumed_strain_8h_1aeb8c09af8fe44b119e8b83d3f0769899aea17b11092dfaf3882b2845bcdadf5fe" kind="enumvalue"><name>SimoRifaiEAS4</name></member>
+    <member refid="_marmot_enhanced_assumed_strain_8h_1ad75f2d610c4d50a5b73f4da94c7df125" kind="function"><name>F</name></member>
+    <member refid="_marmot_enhanced_assumed_strain_8h_1a93500e70f7207800ac09455a70b2b54a" kind="function"><name>EASInterpolation</name></member>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_mass_lumping" kind="namespace"><name>Marmot::Discretizations::Elements::MassLumping</name>
+    <member refid="_marmot_mass_lumping_8h_1a9c4f1ff6593e33bb081458f1ed1fc197" kind="function"><name>nLinearNodes</name></member>
+    <member refid="_marmot_mass_lumping_8h_1a61aea4a3753f3cd38f9851545af41547" kind="function"><name>manifoldBlendWeight</name></member>
+    <member refid="_marmot_mass_lumping_8h_1a8bfa3c0532ac554105d008afa0d36964" kind="function"><name>manifoldMassFractions</name></member>
+    <member refid="_marmot_mass_lumping_8h_1a1d4a1407f4b89eae150b4180321204c0" kind="function"><name>timeStepFactorFromMassDistribution</name></member>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_quadrature" kind="namespace"><name>Marmot::Discretizations::Elements::Quadrature</name>
+    <member refid="_marmot_finite_element_8h_1a4c73d9802409b4c1689dcf1943c8694b" kind="enum"><name>QuadratureFamily</name></member>
+    <member refid="_marmot_finite_element_8h_1a4c73d9802409b4c1689dcf1943c8694baedc41fb7bf8bdac012523d1bcd949a4f" kind="enumvalue"><name>Gauss</name></member>
+    <member refid="_marmot_finite_element_8h_1a4c73d9802409b4c1689dcf1943c8694baa96016246f4f1e3b5470d19bae942579" kind="enumvalue"><name>NewtonCotes</name></member>
+    <member refid="_marmot_finite_element_8h_1a9400325d3d210b4a464b576a6d7bf8a5" kind="function"><name>quadratureRules</name></member>
+    <member refid="_marmot_finite_element_8h_1aa11069fdccac8dac9a18b05f42996f29" kind="function"><name>gaussExactToDegree</name></member>
+    <member refid="_marmot_finite_element_8h_1a02dd46aedcc17d55bd77b718e73dc365" kind="function"><name>newtonCotesExactToDegree</name></member>
+    <member refid="_marmot_finite_element_8h_1a19945e9a4ca3fe5cdd84aa2ce56af67f" kind="function"><name>getQuadraturePoints</name></member>
+    <member refid="_marmot_finite_element_8h_1a2e98afe11b4aaf32e9ca67484403d975" kind="function"><name>getQuadraturePoints</name></member>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_spatial1_d" kind="namespace"><name>Marmot::Discretizations::Elements::Quadrature::Spatial1D</name>
+    <member refid="_marmot_finite_element_8h_1a543ab7a5e7f74942ef64eb5e6be67a8e" kind="variable"><name>nDim</name></member>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_spatial2_d" kind="namespace"><name>Marmot::Discretizations::Elements::Quadrature::Spatial2D</name>
+    <member refid="_marmot_finite_element_8h_1ae921a71f05085fde99bdd257dbf758c8" kind="variable"><name>nDim</name></member>
+    <member refid="_marmot_finite_element_8h_1a2576e07ff8f8e40551c90e35f79637a8" kind="function"><name>modifyCharElemLengthAbaqusLike</name></member>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_spatial3_d" kind="namespace"><name>Marmot::Discretizations::Elements::Quadrature::Spatial3D</name>
+    <member refid="_marmot_finite_element_8h_1a9dfdcfc3e9389f0d902d6ad0d99f3943" kind="variable"><name>nDim</name></member>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_small_strain" kind="namespace"><name>Marmot::Discretizations::Elements::SmallStrain</name>
+    <member refid="_marmot_small_strain_kinematics_8h_1a35c07c89b450d37749b5e78c39bdaa7c" kind="typedef"><name>Voigt</name></member>
+    <member refid="_marmot_small_strain_kinematics_8h_1af62cbc0fcfdb430886f26e3833aac50a" kind="function"><name>strainIncrement</name></member>
+    <member refid="_marmot_small_strain_kinematics_8h_1ade87aded2b979882a03eaac4667ef707" kind="function"><name>addInternalForce</name></member>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_spatial1_d" kind="namespace"><name>Marmot::Discretizations::Elements::Spatial1D</name>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_spatial1_d_1_1_bar2" kind="namespace"><name>Marmot::Discretizations::Elements::Spatial1D::Bar2</name>
+    <member refid="_marmot_finite_element_8h_1a7634c370240d4fa7baf8fd5c39b852d0" kind="typedef"><name>NSized</name></member>
+    <member refid="_marmot_finite_element_8h_1a60178f075d26e430d30511a51c8dddf7" kind="typedef"><name>dNdXiSized</name></member>
+    <member refid="_marmot_finite_element_8h_1adf24aecc3bc39e576ba00e506869315a" kind="variable"><name>nNodes</name></member>
+    <member refid="_marmot_finite_element_8h_1a3a89b5113efa27bcb2287ec5ac6ee3e8" kind="function"><name>N</name></member>
+    <member refid="_marmot_finite_element_8h_1a24f1fd55196dc58688af0eb0a50ad8b4" kind="function"><name>dNdXi</name></member>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_spatial1_d_1_1_bar3" kind="namespace"><name>Marmot::Discretizations::Elements::Spatial1D::Bar3</name>
+    <member refid="_marmot_finite_element_8h_1a4c366ed0174083fa3d6f97260cc63856" kind="typedef"><name>NSized</name></member>
+    <member refid="_marmot_finite_element_8h_1ae6a628051edc7e911c990597661f7759" kind="typedef"><name>dNdXiSized</name></member>
+    <member refid="_marmot_finite_element_8h_1a9b1bd9699edd5ee19a2052d2e20573d5" kind="variable"><name>nNodes</name></member>
+    <member refid="_marmot_finite_element_8h_1aca69441f31ec1c0a66c9de7f42a9807e" kind="function"><name>N</name></member>
+    <member refid="_marmot_finite_element_8h_1a7102ddd4bd651756bdcced8c38787be2" kind="function"><name>dNdXi</name></member>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_spatial2_d" kind="namespace"><name>Marmot::Discretizations::Elements::Spatial2D</name>
+    <member refid="_marmot_finite_element_8h_1a5cab07b434d5995c170ab1401609ccad" kind="variable"><name>nDim</name></member>
+    <member refid="_marmot_finite_element_8h_1a00d87dd8f7461ccd909d262371df39e6" kind="variable"><name>voigtSize</name></member>
+    <member refid="_marmot_finite_element_8h_1a334c68ff3b01a1dc3bb36a898de9363e" kind="function"><name>B</name></member>
+    <member refid="_marmot_finite_element_8h_1a7530fefb90ff33ee23e8183172aecc16" kind="function"><name>BGreen</name></member>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_spatial2_d_1_1_axisymmetric" kind="namespace"><name>Marmot::Discretizations::Elements::Spatial2D::Axisymmetric</name>
+    <member refid="_marmot_finite_element_8h_1a759a02da31864400f2363841d4816ba3" kind="variable"><name>voigtSize</name></member>
+    <member refid="_marmot_finite_element_8h_1af287147dc753792af664c2dbfc6cd880" kind="function"><name>B</name></member>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_spatial2_d_1_1_quad4" kind="namespace"><name>Marmot::Discretizations::Elements::Spatial2D::Quad4</name>
+    <member refid="_marmot_finite_element_8h_1a60be44ddc73fdf579824b21023f2f7ec" kind="typedef"><name>CoordinateSized</name></member>
+    <member refid="_marmot_finite_element_8h_1afa8e22cdb79b6f626fba061652dabbe3" kind="typedef"><name>NSized</name></member>
+    <member refid="_marmot_finite_element_8h_1a0ea9e3ddfbc8a9e891a8e5e6f6c6e3c5" kind="typedef"><name>dNdXiSized</name></member>
+    <member refid="_marmot_finite_element_8h_1aa657490e2c10687b937d2a4b6b13666b" kind="variable"><name>nNodes</name></member>
+    <member refid="_marmot_finite_element_8h_1a514af3ebc5b1727e43c9abaa028e2ba2" kind="function"><name>N</name></member>
+    <member refid="_marmot_finite_element_8h_1a39b733c83e05d0910824e5ef9f693235" kind="function"><name>dNdXi</name></member>
+    <member refid="_marmot_finite_element_8h_1a91557cc3ee80d17eab2bf4c8fd8d9e5a" kind="function"><name>getBoundaryElementIndices</name></member>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_spatial2_d_1_1_quad8" kind="namespace"><name>Marmot::Discretizations::Elements::Spatial2D::Quad8</name>
+    <member refid="_marmot_finite_element_8h_1aeab15995e2496388b8022ac6bf4fffcf" kind="typedef"><name>CoordinateSized</name></member>
+    <member refid="_marmot_finite_element_8h_1a3552b284c5e1d2567c28383dfaef60c0" kind="typedef"><name>NSized</name></member>
+    <member refid="_marmot_finite_element_8h_1a8845271d90fc585a79491d0f589c97a3" kind="typedef"><name>dNdXiSized</name></member>
+    <member refid="_marmot_finite_element_8h_1a324324a31ed705236bac1613178bd1a4" kind="variable"><name>nNodes</name></member>
+    <member refid="_marmot_finite_element_8h_1ae1168b9d15513615864241d0fc8bd461" kind="function"><name>N</name></member>
+    <member refid="_marmot_finite_element_8h_1a2b16ec838bd21644d68181521961de56" kind="function"><name>dNdXi</name></member>
+    <member refid="_marmot_finite_element_8h_1ac509d30b23d91e67af159eb4435ddc68" kind="function"><name>getBoundaryElementIndices</name></member>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_spatial2_d_1_1_tri3" kind="namespace"><name>Marmot::Discretizations::Elements::Spatial2D::Tri3</name>
+    <member refid="_marmot_finite_element_8h_1a7d9d36799a892591de4dd717506bce4d" kind="typedef"><name>CoordinateSized</name></member>
+    <member refid="_marmot_finite_element_8h_1a6e79f189f134139aa4ba8426f022a676" kind="typedef"><name>NSized</name></member>
+    <member refid="_marmot_finite_element_8h_1a5e83bbf929805c077513844d39c44135" kind="typedef"><name>dNdXiSized</name></member>
+    <member refid="_marmot_finite_element_8h_1a4c25d364e4cbe085428a369bd7b7584b" kind="variable"><name>nNodes</name></member>
+    <member refid="_marmot_finite_element_8h_1a319ce5ef7ef9da5fdc5370e0c673ebbf" kind="function"><name>N</name></member>
+    <member refid="_marmot_finite_element_8h_1a81c3042d65357e49c1489ab348a7f908" kind="function"><name>dNdXi</name></member>
+    <member refid="_marmot_finite_element_8h_1a835d15c974cd27597c5760b8efd378f7" kind="function"><name>getBoundaryElementIndices</name></member>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_spatial3_d" kind="namespace"><name>Marmot::Discretizations::Elements::Spatial3D</name>
+    <member refid="_marmot_finite_element_8h_1acced8db72ef45a1a0f02f786879986fe" kind="variable"><name>nDim</name></member>
+    <member refid="_marmot_finite_element_8h_1a46f83e0a7b274d110993cfa6e56471ca" kind="variable"><name>voigtSize</name></member>
+    <member refid="_marmot_finite_element_8h_1aa28158a1d9415be34717b1ba28da4fc9" kind="function"><name>B</name></member>
+    <member refid="_marmot_finite_element_8h_1abd7034cfe51ca84c9ddaec4183b58157" kind="function"><name>B_bar</name></member>
+    <member refid="_marmot_finite_element_8h_1a61adfd9c45c9e9dbc746af5574b7aeec" kind="function"><name>BGreen</name></member>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_spatial3_d_1_1_hexa20" kind="namespace"><name>Marmot::Discretizations::Elements::Spatial3D::Hexa20</name>
+    <member refid="_marmot_finite_element_8h_1a158d3751c4e9867f07ce8bd16c951f39" kind="typedef"><name>CoordinateSized</name></member>
+    <member refid="_marmot_finite_element_8h_1a1886c425d2f078a0f1df12e6485308c1" kind="typedef"><name>NSized</name></member>
+    <member refid="_marmot_finite_element_8h_1a4be654d0587313c426dbf3175a401c95" kind="typedef"><name>dNdXiSized</name></member>
+    <member refid="_marmot_finite_element_8h_1a363a77aa2658399c4b59424dac93209c" kind="variable"><name>nNodes</name></member>
+    <member refid="_marmot_finite_element_8h_1a38044d2acdca738d682e5e64ac3c9ace" kind="function"><name>N</name></member>
+    <member refid="_marmot_finite_element_8h_1a119b57b8436accae20fcbc5472b7a77e" kind="function"><name>dNdXi</name></member>
+    <member refid="_marmot_finite_element_8h_1a7927d159eda99af7f1fdd9be59372181" kind="function"><name>getBoundaryElementIndices</name></member>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_spatial3_d_1_1_hexa8" kind="namespace"><name>Marmot::Discretizations::Elements::Spatial3D::Hexa8</name>
+    <member refid="_marmot_finite_element_8h_1a9019ac82cd2e39c9bd32877d6325f8af" kind="typedef"><name>CoordinateSized</name></member>
+    <member refid="_marmot_finite_element_8h_1a1847d3423e0586206177d7594f5947c4" kind="typedef"><name>NSized</name></member>
+    <member refid="_marmot_finite_element_8h_1aca50c09c1a186a2fb43fbdeb582da62b" kind="typedef"><name>dNdXiSized</name></member>
+    <member refid="_marmot_finite_element_8h_1ac735038f0b5429a3009ad425759713a0" kind="variable"><name>nNodes</name></member>
+    <member refid="_marmot_finite_element_8h_1a4103f340c53c1fe71e125bf5f80d1fe6" kind="function"><name>N</name></member>
+    <member refid="_marmot_finite_element_8h_1a9464e685f814a8ebc2153326e761b403" kind="function"><name>dNdXi</name></member>
+    <member refid="_marmot_finite_element_8h_1ad24118775db70d14a92444764ad149ea" kind="function"><name>getBoundaryElementIndices</name></member>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_spatial3_d_1_1_tetra10" kind="namespace"><name>Marmot::Discretizations::Elements::Spatial3D::Tetra10</name>
+    <member refid="_marmot_finite_element_8h_1aa845f18a324c2017f6445262b270193e" kind="typedef"><name>CoordinateSized</name></member>
+    <member refid="_marmot_finite_element_8h_1ac352151b17f93030385069a0fbbb0808" kind="typedef"><name>NSized</name></member>
+    <member refid="_marmot_finite_element_8h_1a8265d5e3e4e41f7bc35125133bd2b5ea" kind="typedef"><name>dNdXiSized</name></member>
+    <member refid="_marmot_finite_element_8h_1a8143b9e9c418f6d6b23daa256318e243" kind="variable"><name>nNodes</name></member>
+    <member refid="_marmot_finite_element_8h_1a0264332927f991ae10100ddbb73002f8" kind="function"><name>N</name></member>
+    <member refid="_marmot_finite_element_8h_1a08b6ee132998a20e2faa42fd0a02adcf" kind="function"><name>dNdXi</name></member>
+    <member refid="_marmot_finite_element_8h_1a5b7ba73b3ea6c69ad1c0723794d6eb41" kind="function"><name>getBoundaryElementIndices</name></member>
+  </compound>
+  <compound refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_spatial3_d_1_1_tetra4" kind="namespace"><name>Marmot::Discretizations::Elements::Spatial3D::Tetra4</name>
+    <member refid="_marmot_finite_element_8h_1a505460b9df0a1cdc546cc515b15d8d48" kind="typedef"><name>CoordinateSized</name></member>
+    <member refid="_marmot_finite_element_8h_1ae0d9a16206c87612e5baeff3874e48b3" kind="typedef"><name>NSized</name></member>
+    <member refid="_marmot_finite_element_8h_1a5f1f8af5d3e1a0f0d8b7ed250bd8819f" kind="typedef"><name>dNdXiSized</name></member>
+    <member refid="_marmot_finite_element_8h_1a11f7f2e857fc7a259d0b563c25ef7e38" kind="variable"><name>nNodes</name></member>
+    <member refid="_marmot_finite_element_8h_1a29eff4dfeba22168f0ec91dc9e4a14d7" kind="function"><name>N</name></member>
+    <member refid="_marmot_finite_element_8h_1a01e308192360d05370dfc1f414e4af39" kind="function"><name>dNdXi</name></member>
+    <member refid="_marmot_finite_element_8h_1ab7513f2fb341849d1b81ce8beb7ea4ca" kind="function"><name>getBoundaryElementIndices</name></member>
+  </compound>
+  <compound refid="namespace_marmot_1_1_registry" kind="namespace"><name>Marmot::Registry</name>
+  </compound>
+  <compound refid="_marmot_bulk_viscosity_8h" kind="file"><name>MarmotBulkViscosity.h</name>
+  </compound>
+  <compound refid="_marmot_consistent_mass_8h" kind="file"><name>MarmotConsistentMass.h</name>
+  </compound>
+  <compound refid="_marmot_dof_layout_tools_8h" kind="file"><name>MarmotDofLayoutTools.h</name>
+  </compound>
+  <compound refid="_marmot_element_8h" kind="file"><name>MarmotElement.h</name>
+  </compound>
+  <compound refid="_marmot_element_factory_8h" kind="file"><name>MarmotElementFactory.h</name>
+  </compound>
+  <compound refid="_marmot_element_property_8h" kind="file"><name>MarmotElementProperty.h</name>
+  </compound>
+  <compound refid="_marmot_enhanced_assumed_strain_8h" kind="file"><name>MarmotEnhancedAssumedStrain.h</name>
+  </compound>
+  <compound refid="_marmot_finite_element_8h" kind="file"><name>MarmotFiniteElement.h</name>
+  </compound>
+  <compound refid="_marmot_finite_element_spatial_wrapper_8h" kind="file"><name>MarmotFiniteElementSpatialWrapper.h</name>
+  </compound>
+  <compound refid="_marmot_geometry_element_8h" kind="file"><name>MarmotGeometryElement.h</name>
+  </compound>
+  <compound refid="_marmot_geometry_interface_element_8h" kind="file"><name>MarmotGeometryInterfaceElement.h</name>
+  </compound>
+  <compound refid="_marmot_mass_lumping_8h" kind="file"><name>MarmotMassLumping.h</name>
+  </compound>
+  <compound refid="_marmot_small_strain_kinematics_8h" kind="file"><name>MarmotSmallStrainKinematics.h</name>
+  </compound>
+  <compound refid="dir_6d4da112a1331882b0b6514a341190a0" kind="dir"><name>/home/runner/work/Marmot/Marmot/modules/core</name>
+  </compound>
+  <compound refid="dir_7a1ab5031ed028ea4c059c711d14cf0d" kind="dir"><name>/home/runner/work/Marmot/Marmot/modules/core/MarmotFiniteElementCore/include</name>
+  </compound>
+  <compound refid="dir_e6c99e61a88c6eeecbcab6235d9f46dc" kind="dir"><name>/home/runner/work/Marmot/Marmot/modules/core/MarmotFiniteElementCore/include/Marmot</name>
+  </compound>
+  <compound refid="dir_a6282ced73efdb7b36cfc8bdf7a60b20" kind="dir"><name>/home/runner/work/Marmot/Marmot/modules/core/MarmotFiniteElementCore</name>
+  </compound>
+  <compound refid="dir_e05d7e2b1ecd646af5bb94391405f3b5" kind="dir"><name>/home/runner/work/Marmot/Marmot/modules</name>
+  </compound>
+</doxygenindex>

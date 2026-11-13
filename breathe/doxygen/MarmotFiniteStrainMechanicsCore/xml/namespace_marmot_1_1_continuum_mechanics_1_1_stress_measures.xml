@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="namespace_marmot_1_1_continuum_mechanics_1_1_stress_measures" kind="namespace" language="C++">
+    <compoundname>Marmot::ContinuumMechanics::StressMeasures</compoundname>
+    <innernamespace refid="namespace_marmot_1_1_continuum_mechanics_1_1_stress_measures_1_1_first_order">Marmot::ContinuumMechanics::StressMeasures::FirstOrder</innernamespace>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="_marmot_stress_measures_8h_1a8849beac147c1a8ada8101d6717f118b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>Math::Tensors::FastorTensors::Tensor33t&lt; T &gt;</type>
+        <definition>Math::Tensors::FastorTensors::Tensor33t&lt; T &gt; Marmot::ContinuumMechanics::StressMeasures::KirchhoffStressFromPK2</definition>
+        <argsstring>(const Math::Tensors::FastorTensors::Tensor33t&lt; T &gt; &amp;PK2, const Math::Tensors::FastorTensors::Tensor33t&lt; T &gt; &amp;F)</argsstring>
+        <name>KirchhoffStressFromPK2</name>
+        <qualifiedname>Marmot::ContinuumMechanics::StressMeasures::KirchhoffStressFromPK2</qualifiedname>
+        <param>
+          <type>const Math::Tensors::FastorTensors::Tensor33t&lt; T &gt; &amp;</type>
+          <declname>PK2</declname>
+        </param>
+        <param>
+          <type>const Math::Tensors::FastorTensors::Tensor33t&lt; T &gt; &amp;</type>
+          <declname>F</declname>
+        </param>
+        <briefdescription>
+<para>Computes the Kirchhoff stress from the 2nd Piola-Kirchhoff stress and the deformation gradient. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The Kirchhoff stress is computed as   <formula id="63">\[  \boldsymbol{\tau} = \boldsymbol{F}  \boldsymbol{S}  \boldsymbol{F}^T
+\]</formula> or in index notation   <formula id="64">\[\tau_{ij} = F_{iI} S_{IJ} F_{jJ}.
+\]</formula></para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scalar type, e.g. double, float </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>PK2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>2nd Piola-Kirchhoff stress </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Deformation gradient </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Kirchhoff stress </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/Marmot/Marmot/modules/core/MarmotFiniteStrainMechanicsCore/include/Marmot/MarmotStressMeasures.h" line="51" column="43" bodyfile="/home/runner/work/Marmot/Marmot/modules/core/MarmotFiniteStrainMechanicsCore/include/Marmot/MarmotStressMeasures.h" bodystart="51" bodyend="60"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/Marmot/Marmot/modules/core/MarmotFiniteStrainMechanicsCore/include/Marmot/MarmotStressMeasures.h" line="31" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="namespace_marmot_1_1_continuum_mechanics_1_1_time_integration" kind="namespace" language="C++">
+    <compoundname>Marmot::ContinuumMechanics::TimeIntegration</compoundname>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="_newmark_beta_integrator_8h_1acefc537ef15c5a11cd75bc81c8e2266f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>nDim</declname>
+            <defname>nDim</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void Marmot::ContinuumMechanics::TimeIntegration::newmarkBetaIntegration</definition>
+        <argsstring>(const double *du, double *v, double *a, double dT, double newmarkBeta, double newmarkGamma, double *da_ddu)</argsstring>
+        <name>newmarkBetaIntegration</name>
+        <qualifiedname>Marmot::ContinuumMechanics::TimeIntegration::newmarkBetaIntegration</qualifiedname>
+        <param>
+          <type>const double *</type>
+          <declname>du</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dT</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>newmarkBeta</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>newmarkGamma</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>da_ddu</declname>
+        </param>
+        <briefdescription>
+<para>Newmark-beta time integration at one point: the acceleration and the velocity at the end of an increment from the displacement increment. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Solves the Newmark relations     <formula id="98">\[  \Delta u = \Delta t\, v_n + \tfrac{\Delta t^2}{2} \left[ (1 - 2\beta)\, a_n + 2\beta\, a_{n+1} \right],
+  \qquad
+  v_{n+1} = v_n + \Delta t \left[ (1 - \gamma)\, a_n + \gamma\, a_{n+1} \right]
+\]</formula> for <formula id="99">$ a_{n+1} $</formula> and <formula id="100">$ v_{n+1} $</formula>, component by component, and returns the derivative <formula id="101">$ \partial a_{n+1} / \partial \Delta u = 1 / (\beta \Delta t^2) $</formula>, which the host&apos;s tangent needs for the inertia term.</para>
+<para>Two cases add no inertia:<itemizedlist>
+<listitem><para><formula id="102">$ \beta = 0 $</formula>: no time integration (a quasi-static analysis), which is at rest: the velocity and the acceleration are zero, whatever they were before (e.g. after a dynamic step), and so is the derivative.</para>
+</listitem><listitem><para>A zero-length increment, <formula id="103">$ \Delta t = 0 $</formula>: nothing moves in zero time, so the velocity and the acceleration are left as they are ( <formula id="104">$ v_{n+1} = v_n $</formula>, <formula id="105">$ a_{n+1} = a_n $</formula>), whatever <formula id="106">$ \Delta u $</formula> is, and the derivative is zero. The inertial force of the unchanged acceleration remains in the host&apos;s residual. A host that integrates in time skips such an increment, or evaluates at it only to compute a state at rest in time (e.g. the acceleration of its own nodes from equilibrium).</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>nDim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of components. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">du</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Displacement increment <formula id="106">$ \Delta u $</formula>, nDim components. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Velocity: <formula id="107">$ v_n $</formula> on entry, <formula id="100">$ v_{n+1} $</formula> on return. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Acceleration: <formula id="108">$ a_n $</formula> on entry, <formula id="99">$ a_{n+1} $</formula> on return. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dT</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time increment <formula id="109">$ \Delta t \geq 0 $</formula>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">newmarkBeta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Newmark parameter <formula id="110">$ \beta $</formula> (1/4 with <formula id="111">$ \gamma = 1/2 $</formula>: the average acceleration rule; 0: no time integration). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">newmarkGamma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Newmark parameter <formula id="112">$ \gamma $</formula>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">da_ddu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Derivative <formula id="113">$ \partial a_{n+1} / \partial \Delta u $</formula>, an nDim x nDim matrix (column major); only its diagonal is written. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/Marmot/Marmot/modules/core/MarmotMechanicsCore/include/Marmot/NewmarkBetaIntegrator.h" line="64" column="8" bodyfile="/home/runner/work/Marmot/Marmot/modules/core/MarmotMechanicsCore/include/Marmot/NewmarkBetaIntegrator.h" bodystart="64" bodyend="95"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/Marmot/Marmot/modules/core/MarmotMechanicsCore/include/Marmot/NewmarkBetaIntegrator.h" line="28" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="namespace_marmot_1_1_continuum_mechanics_1_1_localization_analysis" kind="namespace" language="C++">
+    <compoundname>Marmot::ContinuumMechanics::LocalizationAnalysis</compoundname>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="_marmot_localization_8h_1a128bcd9345e74cc889f6287faa1d97d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Marmot::Math::Matrix3d</type>
+        <definition>Marmot::Math::Matrix3d Marmot::ContinuumMechanics::LocalizationAnalysis::computeAcousticTensor</definition>
+        <argsstring>(const Marmot::Math::Matrix6d &amp;materialTangent, const Marmot::Math::Vector3d &amp;normalVector)</argsstring>
+        <name>computeAcousticTensor</name>
+        <qualifiedname>Marmot::ContinuumMechanics::LocalizationAnalysis::computeAcousticTensor</qualifiedname>
+        <param>
+          <type>const Marmot::Math::Matrix6d &amp;</type>
+          <declname>materialTangent</declname>
+        </param>
+        <param>
+          <type>const Marmot::Math::Vector3d &amp;</type>
+          <declname>normalVector</declname>
+        </param>
+        <briefdescription>
+<para>Computes the acoustic tensor for a given material tangent and normal vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>materialTangent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fourth-order material tangent in Voigt notation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>normalVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Candidate band normal <formula id="115">$\mathbf{n}$</formula>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Acoustic tensor <formula id="116">$\mathbf{Q} = \mathbf{n} \cdot \mathbb{C} \cdot \mathbf{n}$</formula>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/Marmot/Marmot/modules/core/MarmotMechanicsCore/include/Marmot/MarmotLocalization.h" line="46" column="26" declfile="/home/runner/work/Marmot/Marmot/modules/core/MarmotMechanicsCore/include/Marmot/MarmotLocalization.h" declline="46" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="function" id="_marmot_localization_8h_1a5261457864fd391e85f314960c58918f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Marmot::ContinuumMechanics::LocalizationAnalysis::localizationChecker</definition>
+        <argsstring>(const Marmot::Math::Matrix3d &amp;acousticTensor)</argsstring>
+        <name>localizationChecker</name>
+        <qualifiedname>Marmot::ContinuumMechanics::LocalizationAnalysis::localizationChecker</qualifiedname>
+        <param>
+          <type>const Marmot::Math::Matrix3d &amp;</type>
+          <declname>acousticTensor</declname>
+        </param>
+        <briefdescription>
+<para>Checks whether the given acoustic tensor indicates localization. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>acousticTensor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Acoustic tensor to test. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if <formula id="117">$\det(\mathbf{Q}) \le 0$</formula> (localization detected). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/Marmot/Marmot/modules/core/MarmotMechanicsCore/include/Marmot/MarmotLocalization.h" line="54" column="8" declfile="/home/runner/work/Marmot/Marmot/modules/core/MarmotMechanicsCore/include/Marmot/MarmotLocalization.h" declline="54" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="_marmot_localization_8h_1a89712a31fc39410a3d28cad876384f1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Marmot::Math::Vector3d</type>
+        <definition>Marmot::Math::Vector3d Marmot::ContinuumMechanics::LocalizationAnalysis::computeNormalVector</definition>
+        <argsstring>(double alpha, double beta)</argsstring>
+        <name>computeNormalVector</name>
+        <qualifiedname>Marmot::ContinuumMechanics::LocalizationAnalysis::computeNormalVector</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>beta</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a unit normal vector from spherical angles. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>alpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Polar angle (rad). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>beta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Azimuthal angle (rad). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Unit normal vector <formula id="115">$\mathbf{n}$</formula>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/Marmot/Marmot/modules/core/MarmotMechanicsCore/include/Marmot/MarmotLocalization.h" line="62" column="26" declfile="/home/runner/work/Marmot/Marmot/modules/core/MarmotMechanicsCore/include/Marmot/MarmotLocalization.h" declline="62" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="function" id="_marmot_localization_8h_1ad2404ea9473b103bc91a29aed9b3688b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Marmot::ContinuumMechanics::LocalizationAnalysis::minimumDeterminantAcousticTensor</definition>
+        <argsstring>(const Marmot::Math::Matrix6d &amp;materialTangent)</argsstring>
+        <name>minimumDeterminantAcousticTensor</name>
+        <qualifiedname>Marmot::ContinuumMechanics::LocalizationAnalysis::minimumDeterminantAcousticTensor</qualifiedname>
+        <param>
+          <type>const Marmot::Math::Matrix6d &amp;</type>
+          <declname>materialTangent</declname>
+        </param>
+        <briefdescription>
+<para>Computes the minimum determinant of the acoustic tensor over all band normals. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>materialTangent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fourth-order material tangent in Voigt notation. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Minimum determinant of the acoustic tensor. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/Marmot/Marmot/modules/core/MarmotMechanicsCore/include/Marmot/MarmotLocalization.h" line="69" column="10" declfile="/home/runner/work/Marmot/Marmot/modules/core/MarmotMechanicsCore/include/Marmot/MarmotLocalization.h" declline="69" declcolumn="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/Marmot/Marmot/modules/core/MarmotMechanicsCore/include/Marmot/MarmotLocalization.h" line="38" column="1"/>
+  </compounddef>
+</doxygen>

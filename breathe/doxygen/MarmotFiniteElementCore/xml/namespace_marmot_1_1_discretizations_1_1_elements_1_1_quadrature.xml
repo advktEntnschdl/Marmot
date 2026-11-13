@@ -1,0 +1,268 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="namespace_marmot_1_1_discretizations_1_1_elements_1_1_quadrature" kind="namespace" language="C++">
+    <compoundname>Marmot::Discretizations::Elements::Quadrature</compoundname>
+    <innerclass refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_quadrature_point_info" prot="public">Marmot::Discretizations::Elements::Quadrature::QuadraturePointInfo</innerclass>
+    <innerclass refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_quadrature_rule_data" prot="public">Marmot::Discretizations::Elements::Quadrature::QuadratureRuleData</innerclass>
+    <innerclass refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_quadrature_rule" prot="public">Marmot::Discretizations::Elements::Quadrature::QuadratureRule</innerclass>
+    <innernamespace refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_spatial1_d">Marmot::Discretizations::Elements::Quadrature::Spatial1D</innernamespace>
+    <innernamespace refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_spatial2_d">Marmot::Discretizations::Elements::Quadrature::Spatial2D</innernamespace>
+    <innernamespace refid="namespace_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_spatial3_d">Marmot::Discretizations::Elements::Quadrature::Spatial3D</innernamespace>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="_marmot_finite_element_8h_1a4c73d9802409b4c1689dcf1943c8694b" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>QuadratureFamily</name>
+        <qualifiedname>Marmot::Discretizations::Elements::Quadrature::QuadratureFamily</qualifiedname>
+        <enumvalue id="_marmot_finite_element_8h_1a4c73d9802409b4c1689dcf1943c8694baedc41fb7bf8bdac012523d1bcd949a4f" prot="public">
+          <name>Gauss</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Gauss-type rules with interior points and positive weights: Gauss-Legendre on Line, Quadrilateral and Hexahedron, symmetric Gauss rules on Triangle and Tetrahedron. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_marmot_finite_element_8h_1a4c73d9802409b4c1689dcf1943c8694baa96016246f4f1e3b5470d19bae942579" prot="public">
+          <name>NewtonCotes</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Closed Newton-Cotes rules: the points form an evenly spaced lattice that includes the boundary, the weights are the integrals of the Lagrange polynomials on that lattice. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Family of a quadrature rule. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/Marmot/Marmot/modules/core/MarmotFiniteElementCore/include/Marmot/MarmotFiniteElement.h" line="757" column="5" bodyfile="/home/runner/work/Marmot/Marmot/modules/core/MarmotFiniteElementCore/include/Marmot/MarmotFiniteElement.h" bodystart="757" bodyend="762"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="_marmot_finite_element_8h_1a9400325d3d210b4a464b576a6d7bf8a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; <ref refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_quadrature_rule_data" kindref="compound">QuadratureRuleData</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt; QuadratureRuleData &gt; &amp; Marmot::Discretizations::Elements::Quadrature::quadratureRules</definition>
+        <argsstring>()</argsstring>
+        <name>quadratureRules</name>
+        <qualifiedname>Marmot::Discretizations::Elements::Quadrature::quadratureRules</qualifiedname>
+        <briefdescription>
+<para>The catalogue of all quadrature rules. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Within each pair of domain and family the rules are sorted by increasing number of points and degree, so the first rule that reaches a requested degree is the cheapest. A new rule is added here, at its place in that order; the lookup <ref refid="_marmot_finite_element_8h_1a19945e9a4ca3fe5cdd84aa2ce56af67f" kindref="member">getQuadraturePoints()</ref> needs no change.</para>
+<para><table rows="6" cols="3"><row>
+<entry thead="yes"><para>Domain  </para>
+</entry><entry thead="yes"><para>Gauss: points -&gt; degree  </para>
+</entry><entry thead="yes"><para>Newton-Cotes: points -&gt; degree  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Line  </para>
+</entry><entry thead="no"><para>1 -&gt; 1, 2 -&gt; 3, 3 -&gt; 5  </para>
+</entry><entry thead="no"><para>2 -&gt; 1  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Quadrilateral  </para>
+</entry><entry thead="no"><para>1x1 -&gt; 1, 2x2 -&gt; 3, 3x3 -&gt; 5  </para>
+</entry><entry thead="no"><para>2x2 -&gt; 1  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Hexahedron  </para>
+</entry><entry thead="no"><para>1x1x1 -&gt; 1, 2x2x2 -&gt; 3, 3x3x3 -&gt; 5  </para>
+</entry><entry thead="no"><para>-  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Triangle  </para>
+</entry><entry thead="no"><para>1 -&gt; 1, 3 -&gt; 2, 7 -&gt; 5  </para>
+</entry><entry thead="no"><para>3 -&gt; 1  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Tetrahedron  </para>
+</entry><entry thead="no"><para>1 -&gt; 1, 4 -&gt; 2, 14 -&gt; 5  </para>
+</entry><entry thead="no"><para>-  </para>
+</entry></row>
+</table>
+</para>
+<para>The Newton-Cotes rules of degree 1 are the trapezoidal rule on Line (also the 2-point Gauss-Lobatto rule), its tensor product on Quadrilateral and the vertex rule on Triangle. Their points are the corners of the domain in corner order (<ref refid="_marmot_finite_element_8h_1a86a49e202b86c13d6f37c65f1d870037" kindref="member">ReferenceDomain</ref>), i.e. the nodes of the linear element in node order. For a linear element N_i(xi_j) = delta_ij, so the rule makes the mass and the interface stiffness diagonal in the nodes (nodal integration). They are used for zero-thickness interface elements with a high penalty stiffness, where Gauss points cause spurious traction oscillations. An element that relies on its points being its nodes must check that itself: on a quadratic element the rule integrates with the corners only, and the shape functions of the other nodes vanish at all points.</para>
+<para><simplesect kind="return"><para>The catalogue; its entries live for the whole program. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/Marmot/Marmot/modules/core/MarmotFiniteElementCore/include/Marmot/MarmotFiniteElement.h" line="805" column="23" declfile="/home/runner/work/Marmot/Marmot/modules/core/MarmotFiniteElementCore/include/Marmot/MarmotFiniteElement.h" declline="805" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="function" id="_marmot_finite_element_8h_1aa11069fdccac8dac9a18b05f42996f29" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_quadrature_rule" kindref="compound">QuadratureRule</ref></type>
+        <definition>QuadratureRule Marmot::Discretizations::Elements::Quadrature::gaussExactToDegree</definition>
+        <argsstring>(int degree)</argsstring>
+        <name>gaussExactToDegree</name>
+        <qualifiedname>Marmot::Discretizations::Elements::Quadrature::gaussExactToDegree</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>degree</declname>
+        </param>
+        <briefdescription>
+<para>Request the Gauss rule with the fewest points that integrates polynomials up to a degree exactly. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">degree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Degree of exactness, e.g. 2 for the stiffness of a bilinear quadrilateral (2x2 points) or 2p for the consistent mass of an element with shape functions of order p. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The request. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/Marmot/Marmot/modules/core/MarmotFiniteElementCore/include/Marmot/MarmotFiniteElement.h" line="830" column="30" bodyfile="/home/runner/work/Marmot/Marmot/modules/core/MarmotFiniteElementCore/include/Marmot/MarmotFiniteElement.h" bodystart="830" bodyend="833"/>
+      </memberdef>
+      <memberdef kind="function" id="_marmot_finite_element_8h_1a02dd46aedcc17d55bd77b718e73dc365" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_quadrature_rule" kindref="compound">QuadratureRule</ref></type>
+        <definition>QuadratureRule Marmot::Discretizations::Elements::Quadrature::newtonCotesExactToDegree</definition>
+        <argsstring>(int degree)</argsstring>
+        <name>newtonCotesExactToDegree</name>
+        <qualifiedname>Marmot::Discretizations::Elements::Quadrature::newtonCotesExactToDegree</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>degree</declname>
+        </param>
+        <briefdescription>
+<para>Request the closed Newton-Cotes rule with the fewest points that integrates polynomials up to a degree exactly. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">degree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Degree of exactness, e.g. 1 for the nodal integration of a linear element, whose nodes are the points of the rule. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The request. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/Marmot/Marmot/modules/core/MarmotFiniteElementCore/include/Marmot/MarmotFiniteElement.h" line="842" column="30" bodyfile="/home/runner/work/Marmot/Marmot/modules/core/MarmotFiniteElementCore/include/Marmot/MarmotFiniteElement.h" bodystart="842" bodyend="845"/>
+      </memberdef>
+      <memberdef kind="function" id="_marmot_finite_element_8h_1a19945e9a4ca3fe5cdd84aa2ce56af67f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; <ref refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_quadrature_point_info" kindref="compound">QuadraturePointInfo</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt; QuadraturePointInfo &gt; &amp; Marmot::Discretizations::Elements::Quadrature::getQuadraturePoints</definition>
+        <argsstring>(ReferenceDomain domain, QuadratureRule rule)</argsstring>
+        <name>getQuadraturePoints</name>
+        <qualifiedname>Marmot::Discretizations::Elements::Quadrature::getQuadraturePoints</qualifiedname>
+        <param>
+          <type><ref refid="_marmot_finite_element_8h_1a86a49e202b86c13d6f37c65f1d870037" kindref="member">ReferenceDomain</ref></type>
+          <declname>domain</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_quadrature_rule" kindref="compound">QuadratureRule</ref></type>
+          <declname>rule</declname>
+        </param>
+        <briefdescription>
+<para>The quadrature points of a requested rule on a reference domain. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference domain. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rule</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Requested family and degree of exactness, e.g. gaussExactToDegree( 3 ) or newtonCotesExactToDegree( 1 ). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The points and weights of the first rule of <ref refid="_marmot_finite_element_8h_1a9400325d3d210b4a464b576a6d7bf8a5" kindref="member">quadratureRules()</ref> on the domain that reaches the requested degree, i.e. the one with the fewest points. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::invalid_argument</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the catalogue holds no such rule. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/Marmot/Marmot/modules/core/MarmotFiniteElementCore/include/Marmot/MarmotFiniteElement.h" line="856" column="23" declfile="/home/runner/work/Marmot/Marmot/modules/core/MarmotFiniteElementCore/include/Marmot/MarmotFiniteElement.h" declline="856" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="function" id="_marmot_finite_element_8h_1a2e98afe11b4aaf32e9ca67484403d975" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::vector&lt; <ref refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_quadrature_point_info" kindref="compound">QuadraturePointInfo</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt; QuadraturePointInfo &gt; &amp; Marmot::Discretizations::Elements::Quadrature::getQuadraturePoints</definition>
+        <argsstring>(ElementShapes shape, QuadratureRule rule)</argsstring>
+        <name>getQuadraturePoints</name>
+        <qualifiedname>Marmot::Discretizations::Elements::Quadrature::getQuadraturePoints</qualifiedname>
+        <param>
+          <type><ref refid="_marmot_finite_element_8h_1afc3a3457c25a0bbd01d1a5d2d07fb78d" kindref="member">ElementShapes</ref></type>
+          <declname>shape</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_marmot_1_1_discretizations_1_1_elements_1_1_quadrature_1_1_quadrature_rule" kindref="compound">QuadratureRule</ref></type>
+          <declname>rule</declname>
+        </param>
+        <briefdescription>
+<para>The quadrature points of a requested rule on the reference domain of an element shape. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">shape</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_marmot_1_1_discretizations_1_1_elements_1_1_element" kindref="compound">Element</ref> shape; it selects the reference domain (<ref refid="_marmot_finite_element_8h_1af4723cb90e4a3659f8a8fe0e3e8c546a" kindref="member">getReferenceDomain()</ref>). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rule</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Requested family and degree of exactness, e.g. gaussExactToDegree( 3 ) or newtonCotesExactToDegree( 1 ). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="_marmot_finite_element_8h_1a19945e9a4ca3fe5cdd84aa2ce56af67f" kindref="member">getQuadraturePoints()</ref> on the reference domain of the shape: all shapes of a domain get the same rule. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::invalid_argument</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the catalogue holds no such rule. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/Marmot/Marmot/modules/core/MarmotFiniteElementCore/include/Marmot/MarmotFiniteElement.h" line="866" column="30" bodyfile="/home/runner/work/Marmot/Marmot/modules/core/MarmotFiniteElementCore/include/Marmot/MarmotFiniteElement.h" bodystart="866" bodyend="869"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/Marmot/Marmot/modules/core/MarmotFiniteElementCore/include/Marmot/MarmotFiniteElement.h" line="744" column="3"/>
+  </compounddef>
+</doxygen>

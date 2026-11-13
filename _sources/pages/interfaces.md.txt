@@ -1,0 +1,140 @@
+# Interfaces
+
+There are several convenient ways to interface with Marmot.
+If you want to use Marmot in a finite element framework,
+you may want to try one of the existing available interfaces.
+
+## How to use Marmot with EdelweissFE
+
+The [EdelweissFE](https://github.com/Edelweiss-Numerics/EdelweissFE) finite element code is designed to work seamlessly with ```Marmot```.
+After the installation of `Marmot`, EdelweissFE can be installed via
+
+```bash
+git clone https://github.com/Edelweiss-Numerics/EdelweissFE.git
+cd EdelweissFE
+conda install --file requirements.txt
+pip install .
+```
+
+## How to use Marmot with Abaqus
+
+The [Abaqus-MarmotInterface](https://github.com/MAteRialMOdelingToolbox/Abaqus-MarmotInterface) allows to use ```Marmot``` in Abaqus simulations.
+
+## How to use Marmot with MOOSE
+
+The [chamois App](https://github.com/matthiasneuner/chamois) allows to use ```Marmot``` directly in [MOOSE](https://github.com/idaholab/moose).
+A singularity container recipe is [available](https://github.com/matthiasneuner/chamois-singularity).
+
+## Create your custom interface
+
+To create your custom interface to Marmot, you can leverage the `Marmot::Registry::MaterialHypoElasticFactory` and `Marmot::Registry::ElementFactory` factories to create
+instances of registered material models and finite elements.
+Marmot provides two main base classes for materials:
+
+- `Marmot::Materials::MaterialHypoElastic` — for small-strain materials formulated in rate form (hypoelastic constitutive relations).
+- `Marmot::Materials::MaterialFiniteStrain` — for large-strain materials formulated in terms of the deformation gradient.
+
+Finite elements are derived from the general parent class `Marmot::Discretizations::Elements::Element`.
+
+For instance, the following procedure may be employed to create an instance of a `Marmot::Materials::LinearElastic` material model,
+which belongs to the class of `Marmot::Materials::MaterialHypoElastic` materials, and compute the current stress state:
+```cpp
+#include "Marmot/MarmotMaterialHypoElasticFactory.h"
+
+// Create the instance by material name
+auto material = std::unique_ptr<Marmot::Materials::MaterialHypoElastic>(
+        Marmot::Registry::MaterialHypoElasticFactory::createMaterial(
+            "LINEARELASTIC", materialProperties, nMaterialProperties, anArbitraryIdentificationCode ));
+
+// assign a characteristic length parameter (specific to hypoelastic materials)
+material->setCharacteristicElementLength( theCharacteristicElementLength );
+
+// set up a material state (stress, strain energy, state variables)
+const int             nStateVars = material->getNumberOfRequiredStateVars();
+std::vector< double > stateVars( nStateVars, 0.0 );
+
+Marmot::Materials::MaterialHypoElastic::state3D state = Marmot::Materials::MaterialHypoElastic::state3D()
+state.stateVars           = stateVars.data();
+
+// compute stresses
+Marmot::Math::Matrix6d                          dStress_dStrain;
+const Marmot::Math::Vector6d                    dStrain  = Marmot::Math::Vector6d::Zero(); // strain increment
+const double                              time     = 0.0;                      // current time
+const double                              dTime    = 0.01;                     // time increment
+const Marmot::Materials::MaterialHypoElastic::timeInfo timeInfo = { time, dTime };
+material->computeStress( state, dStress_dStrain, dStrain, timeInfo );
+```
+
+## Registering a material or finite element
+
+Materials are registered using the `Marmot::Registry::MaterialHypoElasticFactory::registerMaterial` interface.
+The function takes a unique name (a string chosen by the user) and the concrete material type as a template parameter.
+
+For instance, the `LinearElastic` material is registered as
+```cpp
+#include "Marmot/MarmotMaterialHypoElasticFactory.h"
+
+const static bool LinearElasticIsRegistered =
+    Marmot::Registry::MaterialHypoElasticFactory::registerMaterial< Marmot::Materials::LinearElastic >(
+        "LINEARELASTIC" );
+```
+
+Finite elements are registered using the `Marmot::Registry::ElementFactory::registerElement` interface.
+The function takes a unique name (a string chosen by the user) and a factory function.
+
+For instance, the 4-node plane strain displacement finite element "CPE4" is registered as
+```cpp
+#include "Marmot/MarmotElementFactory.h"
+
+template < class T,
+           Marmot::Discretizations::Elements::Quadrature::QuadratureRule quadratureRule,
+           typename T::SectionType                                     sectionType >
+Marmot::Registry::ElementFactory::elementFactoryFunction makeFactoryFunction()
+{
+    return []( int elementID ) -> Marmot::Discretizations::Elements::Element* { return new T( elementID, quadratureRule, sectionType ); };
+}
+
+const static bool CPE4_isRegistered = Marmot::Registry::ElementFactory::
+    registerElement( "CPE4",
+                     makeFactoryFunction< DisplacementFiniteElement< 2, 4 >,
+                                          Quadrature::gaussExactToDegree( 2 ),
+                                          DisplacementFiniteElement< 2, 4 >::PlaneStrain >() );
+```
+making use of an auxiliary factory function generator.
+The quadrature rule is requested by its family and the polynomial degree it must integrate exactly:
+`gaussExactToDegree( 2 )` is the Gauss rule with the fewest points that is exact for degree 2, i.e. 2x2 points on the
+quadrilateral, and `newtonCotesExactToDegree( 1 )` places one point at each node of a linear element (`Bar2`, `Tri3` and
+`Quad4`), for nodal integration.
+The available rules are listed in `Marmot::Discretizations::Elements::Quadrature::quadratureRules()`.
+
+Creating a specific element instance and computing the kernel is straightforward:
+```cpp
+#include "Marmot/MarmotElementFactory.h"
+#include "Marmot/MarmotElementProperty.h"
+
+int elementNumber = 1;
+
+// create the instance by element name
+auto theElement = std::unique_ptr<Marmot::Discretizations::Elements::Element>(
+        Marmot::Registry::ElementFactory::createElement( "CPE4", elementNumber ) );
+
+// assign nodal coordinates
+theElement->assignNodeCoordinates( coordinates );
+
+// assign properties (e.g., thickness)
+theElement->assignProperty( Marmot::Discretizations::ElementProperties( propertiesElement, nPropertiesElement ) );
+
+// assign a material section by material name
+// Marmot::Discretizations::Elements::Element takes care to create the required instances of MarmotMaterial
+theElement->assignProperty( Marmot::Discretizations::MaterialSection( "LINEARELASTIC", propertiesMaterial, nPropertiesMaterial ) );
+
+// assign state vars to the element
+// Marmot::Discretizations::Elements::Element automatically assigns the state vars also to MarmotMaterial instances
+theElement->assignStateVars( stateVars, nStateVars );
+
+// initialization
+theElement->initializeYourself();
+
+// compute the kernel
+theElement->computeYourself( U, dU, rightHandSide, KMatrix, time, dTime, pNewDT );
+```

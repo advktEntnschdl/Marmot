@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="namespace_marmot_1_1_continuum_mechanics_1_1_kinematics_1_1_deformation_gradient" kind="namespace" language="C++">
+    <compoundname>Marmot::ContinuumMechanics::Kinematics::DeformationGradient</compoundname>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="_marmot_kinematics_8h_1ae3c947fa55686ae1b743a62ddcf9faf1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>nDim</declname>
+            <defname>nDim</defname>
+          </param>
+        </templateparamlist>
+        <type>Eigen::Matrix3d</type>
+        <definition>Eigen::Matrix3d Marmot::ContinuumMechanics::Kinematics::DeformationGradient::make3D</definition>
+        <argsstring>(const Eigen::Ref&lt; const Eigen::Matrix&lt; double, nDim, nDim &gt; &gt; &amp;tensor)</argsstring>
+        <name>make3D</name>
+        <qualifiedname>Marmot::ContinuumMechanics::Kinematics::DeformationGradient::make3D</qualifiedname>
+        <param>
+          <type>const Eigen::Ref&lt; const Eigen::Matrix&lt; double, nDim, nDim &gt; &gt; &amp;</type>
+          <declname>tensor</declname>
+        </param>
+        <briefdescription>
+<para>Embeds a lower-dimensional square tensor into a 3x3 tensor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function takes an <formula id="146">$n \times n$</formula> tensor (with <formula id="147">$n=1,2,3$</formula>) and returns a 3x3 tensor:<itemizedlist>
+<listitem><para>For <formula id="148">$n=1$</formula>: the scalar is placed in the (0,0) entry of a 3x3 identity matrix.</para>
+</listitem><listitem><para>For <formula id="149">$n=2$</formula>: the 2x2 tensor is placed in the top-left block of a 3x3 identity matrix.</para>
+</listitem><listitem><para>For <formula id="150">$n=3$</formula>: the tensor is returned unchanged.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>nDim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimension of the input tensor (1, 2, or 3). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tensor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <formula id="146">$n \times n$</formula> tensor represented as Eigen::Matrix&lt;double,nDim,nDim&gt;. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A 3x3 tensor embedding the input according to the rules above. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/Marmot/Marmot/modules/core/MarmotMechanicsCore/include/Marmot/MarmotKinematics.h" line="118" column="21" declfile="/home/runner/work/Marmot/Marmot/modules/core/MarmotMechanicsCore/include/Marmot/MarmotKinematics.h" declline="118" declcolumn="21"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/Marmot/Marmot/modules/core/MarmotMechanicsCore/include/Marmot/MarmotKinematics.h" line="103" column="3"/>
+  </compounddef>
+</doxygen>
